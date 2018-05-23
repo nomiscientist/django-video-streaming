@@ -35,6 +35,7 @@ def indexscreen(request):
 
 @gzip.gzip_page
 def dynamic_stream(request,num=0,stream_path="172.16.4.129"):
-    stream_path = "rtsp://admin:admin123@"+stream_path+"/streaming/channels/2"
+    
+    stream_path = 'add your camera stream here that can rtsp or http'
     return StreamingHttpResponse(gen(VideoCamera(stream_path)),content_type="multipart/x-mixed-replace;boundary=frame")
 
